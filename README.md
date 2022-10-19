@@ -1,10 +1,10 @@
 ![GitHub](https://img.shields.io/github/license/azul182/2emia-projeto)
 
-# Título do projeto
-Descrição do projeto
+# Hubber 
+Rede social com o intuito de divulgar projetos pessoais e até mesmo profissionais
 ## Autores
- - Aluno 1
- - Aluno 2
- - Aluno 3
- - Aluno 4
- - Aluno 5
+ - `Henrique Soubhia` *
+ - Thiago Mendes
+ - Francisco Ferrara
+ - Eduardo Gomes
+ - Gabriel Francisco
