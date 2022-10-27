@@ -1,5 +1,7 @@
 module.exports = (app)=> {
     app.get('/feed', (req,res)=> {
-        res.render('feed')
+        let user = req.query.id
+
+        res.render('feed',{id:user})
     })
 }

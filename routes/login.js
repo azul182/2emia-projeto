@@ -1,12 +1,22 @@
+
 module.exports = (app)=> {
     app.get('/login', (req,res)=> {
-        res.render('login')
+        let user = req.query.id
+        
+        console.log(user)
+        
+        if(user){
+            res.redirect(`/profile?id=${user}`)
+        }else{
+            res.render('login')
+        }
+        
     })
 
     app.post('/login', async (req, res) => {
     
-        var dados = req.body
-        
+        let dados = req.body
+
         var database = require('../config/database')()
         
         let usuarios = require("../models/usuarios")

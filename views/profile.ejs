@@ -16,17 +16,17 @@
 </head>
 
 <header class="header-profile">
-    <a href="/feed">
+    <a href="/feed?id=<%=userDados[0].id%>">
         <img class="header-logo" src="imgs/Logo.png" alt="logo hubber gradiente azul">
     </a>
     <div class="header-nav">
-        <a href="/feed">
+        <a href="/feed?id=<%=userDados[0].id%>">
             <ion-icon name="home-outline"></ion-icon>
         </a>
-        <a href="/post">
+        <a href="/posting?id=<%=userDados[0].id%>">
             <ion-icon name="add-outline"></ion-icon>
         </a>
-        <a href="/login">
+        <a href="/login?id=<%=userDados[0].id%>">
             <ion-icon class="active" name="person-outline"></ion-icon>
         </a>
     </div>
@@ -38,7 +38,9 @@
         <section class="profile-content">
             <div class="profile-info-content">
                 <img src="imgs/7l018d6idfp61.jpg" alt="" class="profile-icon">
-                <h1 class="profile-username">@tigas</h1>
+                <h1 class="profile-username">
+                    @<%=userDados[0].name%>
+                </h1>
                 <p class="profile-bio">Lorem ipsum dolor, sit amet consectetur adipisicin Lorem ipsum dolor, sit amet
                     consectetur adipisicin Lorem ipsum dolor, sit amet consectetur adipisicin</p>
             </div>
@@ -87,13 +89,13 @@
         </section>
     </main>
     <div class="footer-nav">
-        <a class="footer-a" href="/feed">
+        <a class="footer-a" href="/feed?id=<%=userDados[0].id%>">
             <ion-icon name="home-outline"></ion-icon>
         </a>
-        <a class="footer-a" href="/post">
+        <a class="footer-a" href="/posting?id=<%=userDados[0].id%>">
             <ion-icon name="add-outline"></ion-icon>
         </a>
-        <a class="footer-a" href="/login">
+        <a class="footer-a" href="/login?id=<%=userDados[0].id%>">
             <ion-icon class="active" name="person-outline"></ion-icon>
         </a>
     </div>

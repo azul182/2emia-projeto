@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/selectIMG.js"></script>
-    
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="shortcut icon" href="imgs/icon.ico" type="image/x-icon">
@@ -18,17 +18,17 @@
 
 <body>
     <header>
-        <a href="/feed">
+        <a href="/feed?id=<%=id%>">
             <img class="header-logo" src="imgs/Logo.png" alt="logo hubber gradiente azul">
         </a>
         <div class="header-nav">
-            <a href="/feed">
+            <a href="/feed?id=<%=id%>">
                 <ion-icon name="home-outline"></ion-icon>
             </a>
-            <a href="/posting">
+            <a href="/posting?id=<%=id%>">
                 <ion-icon class="active" name="add-outline"></ion-icon>
             </a>
-            <a href="/login">
+            <a href="/login?id=<%=id%>">
                 <ion-icon name="person-outline"></ion-icon>
             </a>
         </div>
@@ -40,32 +40,31 @@
             <button class="post-btn btn" id="post-btn"> Selecionar arquivo</button>
             <input type="file" class="post-input" id="post-input" accept="image/png, image/jpg, image/gif, image/jpeg">
         </div>
-        <div class="post-preview-group" id="preview-group">
-            <img src="#" id="post-img-preview" class="post-img-preview" alt="imagem preview">
-            <input type="text" class="textbox" placeholder="Nome do projeto">
-            <textarea class="post-desc textbox" name="description" placeholder="Insira a descrição do projeto"></textarea>
-            <a href="/feed">
-                <ion-icon id="post-check-btn" class="post-icon-preview post-check-btn"  name="checkmark-circle-outline"></ion-icon>
-            </a>
-            <a href="/post">
+        <form method="post" action="/posting" class="post-preview-group" id="preview-group">
+            <img src="#" id="post-img-preview" class="post-img-preview" alt="imagem preview" name="iamge">
+            <input type="text" class="textbox" placeholder="Nome do projeto" name="title">
+            <textarea class="post-desc textbox" name="description" placeholder="Insira a descrição do projeto"
+                name=""></textarea>
+            <input type="submit" class="btn" value="Postar">
+            <a href="/posting?id=<%=id%>">
                 <ion-icon id="post-cancel-btn" class="post-icon-preview post-cancel-btn" name="close-circle-outline">
                 </ion-icon>
             </a>
 
-        </div>
+        </form>
     </main>
-    <footer>        
+    <footer>
         <div class="footer-nav">
-            <a class="footer-a" href="/feed">
-            <ion-icon  name="home-outline"></ion-icon>
-        </a>
-        <a class="footer-a" href="/post">
-            <ion-icon class="active" name="add-outline"></ion-icon>
-        </a>
-        <a class="footer-a" href="/login">
-            <ion-icon name="person-outline"></ion-icon>
-        </a>
-    </div>
+            <a class="footer-a" href="/feed?id=<%=id%>">
+                <ion-icon name="home-outline"></ion-icon>
+            </a>
+            <a class="footer-a" href="/post?id=<%=id%>">
+                <ion-icon class="active" name="add-outline"></ion-icon>
+            </a>
+            <a class="footer-a" href="/login?id=<%=id%>">
+                <ion-icon name="person-outline"></ion-icon>
+            </a>
+        </div>
     </footer>
 </body>
 
