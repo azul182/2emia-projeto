@@ -23,8 +23,8 @@ var upload = multer({
             return cb(new Error("Tipo de arquivo inválido"))
         }
  },
-limits:{fileSize:17000}
+limits:{fileSize:170000}
 
 }).single("imagem")
 
-module.exports = upload
+module.exports = {upload,multer}

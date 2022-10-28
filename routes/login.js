@@ -3,8 +3,6 @@ module.exports = (app)=> {
     app.get('/login', (req,res)=> {
         let user = req.query.id
         
-        console.log(user)
-        
         if(user){
             res.redirect(`/profile?id=${user}`)
         }else{

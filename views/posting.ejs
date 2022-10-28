@@ -42,9 +42,9 @@
         </div>
         <form method="post" action="/posting" class="post-preview-group" id="preview-group">
             <img src="#" id="post-img-preview" class="post-img-preview" alt="imagem preview" name="iamge">
-            <input type="text" class="textbox" placeholder="Nome do projeto" name="title">
+            <input type="text" class="textbox" placeholder="Nome do projeto" name="title" required>
             <textarea class="post-desc textbox" name="description" placeholder="Insira a descrição do projeto"
-                name=""></textarea>
+                name="" required></textarea>
             <input type="submit" class="btn" value="Postar">
             <a href="/posting?id=<%=id%>">
                 <ion-icon id="post-cancel-btn" class="post-icon-preview post-cancel-btn" name="close-circle-outline">
