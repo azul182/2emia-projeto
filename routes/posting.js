@@ -3,9 +3,9 @@ module.exports = (app) => {
 
     let database = require('../config/database')
 
-    let posting = require('../routes/posting')
+    let posting = require('../models/posting')
 
-    let {upload, multer} = require('../config/multer')
+    let { upload, multer } = require('../config/multer')
 
     app.get('/posting', (req, res) => {
         user = req.query.id
@@ -27,6 +27,7 @@ module.exports = (app) => {
 
         let dados = req.body
 
+
         upload(req, res, async (err) => {
             if (err instanceof multer.MulterError) {
                 res.send("arquivo maior de 1000kb")
@@ -35,18 +36,19 @@ module.exports = (app) => {
             } else {
                 database()
                 let documento = await new posting({
-                        titulo: dados.title,
-                        description: req.description,
-                        arquivo: req.query.filename,
-                        userId: user
-                    }).save()
-                    .then(() => {
-                        res.redirect(`/feed?id=${user}`)
-                    })
-                    .catch(() => {
-                        res.send('Não foi possível salvar')
-                    })
-
+                    file: dados.image,
+                    title:dados.title,
+                    description:req.description,
+                    userId:user
+                }).save()
+                .then(() => {
+                    res.redirect(`/feed?id=${user}`)
+                })
+                .catch(() => {
+                    res.send('Não foi possível salvar')
+                })
+                
+                
             }
         })
 

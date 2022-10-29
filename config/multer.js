@@ -1,5 +1,5 @@
 const multer = require ('multer')
-const armazenamento = multer.diskStorage({
+const storage = multer.diskStorage({
 destination:(req,file,cb)=>{
     cb(null, './uploads/')
 },
@@ -8,8 +8,8 @@ destination:(req,file,cb)=>{
     }
 })
 
-var upload = multer({
-    storage: armazenamento,
+let upload = multer({
+    storage: storage,
     fileFilter: (req,file,cb)=>{
         if(
             file.mimetype == "image.png" ||
@@ -25,6 +25,6 @@ var upload = multer({
  },
 limits:{fileSize:170000}
 
-}).single("imagem")
+}).single("image")
 
 module.exports = {upload,multer}
