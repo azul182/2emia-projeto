@@ -1,3 +1,7 @@
+const multer = require('multer')
+const fs = require('fs')
+const {setFlagsFromString} = require('v8')
+
 let user
 module.exports = (app) => {
 
@@ -5,7 +9,7 @@ module.exports = (app) => {
 
     let posting = require('../models/posting')
 
-    let { upload, multer } = require('../config/multer')
+    let upload = require('../config/multer')
 
     app.get('/posting', (req, res) => {
         user = req.query.id
@@ -36,9 +40,9 @@ module.exports = (app) => {
             } else {
                 database()
                 let documento = await new posting({
-                    file: dados.image,
+                    // file: req.file.filename,
                     title:dados.title,
-                    description:req.description,
+                    description:dados.description,
                     userId:user
                 }).save()
                 .then(() => {

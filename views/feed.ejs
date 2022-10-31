@@ -33,142 +33,45 @@
         </div>
     </header>
     <main class="feed-main">
-        <div class="feed-imgs-group 1">
-            <div class="feed-card">
-                <a href="/detailed_post">
-                    <img class="feed-img"
-                        src="https://media.discordapp.net/attachments/1006233469078220803/1026806959556530227/unknown.png"
-                        alt="wisemysticaltree arvore dekutree">
-                    <div class="feed-desc">
-                        <h3>Nome do projeto</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quidem cumque
-                            consequuntur. Debitis quos aspernatur eveniet commodi corporis magni facilis, at nesciunt
-                            deserunt natus
-                            minus ipsam quaerat quas sed ad!</p>
-                    </div>
-                </a>
-            </div>
-            <div class="feed-card">
-                <a href="/detailed_post">
-                    <img class="feed-img" src="https://onepiecelendas.files.wordpress.com/2012/08/chopper.jpg"
-                        alt="tonytonychopper rena anime">
-                    <div class="feed-desc">
-                        <h3>Nome do projeto</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quidem cumque
-                            consequuntur. Debitis quos aspernatur eveniet commodi corporis magni facilis, at nesciunt
-                            deserunt natus
-                            minus ipsam quaerat quas sed ad!</p>
-                    </div>
-                </a>
-            </div>
-            <div class="feed-card">
-                <a href="/detailed_post">
-                    <img class="feed-img" src="https://img.ibxk.com.br/2020/09/28/28161054293196.jpg "
-                        alt="amomngus vermelho">
-                    <div class="feed-desc">
-                        <h3>Nome do projeto</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quidem cumque
-                            consequuntur. Debitis quos aspernatur eveniet commodi corporis magni facilis, at nesciunt
-                            deserunt natus
-                            minus ipsam quaerat quas sed ad!</p>
-                    </div>
-                </a>
-            </div>
-            <div class="feed-card">
-                <a href="/detailed_post">
-                    <img class="feed-img" src="https://cdn.britannica.com/84/188484-050-F27B0049/lemons-tree.jpg"
-                        alt="limoeiro limao siciliano">
-                    <div class="feed-desc">
-                        <h3>Nome do projeto</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quidem cumque
-                            consequuntur. Debitis quos aspernatur eveniet commodi corporis magni facilis, at nesciunt
-                            deserunt natus
-                            minus ipsam quaerat quas sed ad!</p>
-                    </div>
-                </a>
-            </div>
+        <% for (var n=0; n<posts.length; n++){%>
+        <div class="feed-card">
+            <a href="/detailed_post?id=<%=posts[n].userId%>?idPost=<%=posts[n].id%>">
+                <img class="feed-img"
+                    src="https://media.discordapp.net/attachments/1006233469078220803/1026806959556530227/unknown.png"
+                    alt="wisemysticaltree arvore dekutree">
+                <div class="feed-desc">
+                    <h3><%=posts[n].title%></h3>
+                    <p><%=posts[n].description%></p>
+                </div>
+            </a>
         </div>
-        <div class="feed-imgs-group">
-            <div class="feed-card">
-                <a href="/detailed_post">
-                    <img class="feed-img" src="https://pbs.twimg.com/media/Er0enduWMAEt5S9.png"
-                        alt="jotaro comunista anime">
-                    <div class="feed-desc">
-                        <h3>Nome do projeto</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quidem cumque
-                            consequuntur. Debitis quos aspernatur eveniet commodi corporis magni facilis, at nesciunt
-                            deserunt natus
-                            minus ipsam quaerat quas sed ad!</p>
-                    </div>
-                </a>
-            </div>
-            <div class="feed-card">
-                <a href="/detailed_post">
-                    <img class="feed-img" src="https://i.ytimg.com/vi/aDLN9wAMwUw/maxresdefault.jpg"
-                        alt="plants versus zombies plnata carnivora laranja">
-                    <div class="feed-desc">
-                        <h3>Nome do projeto</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quidem cumque
-                            consequuntur. Debitis quos aspernatur eveniet commodi corporis magni facilis, at nesciunt
-                            deserunt natus
-                            minus ipsam quaerat quas sed ad!</p>
-                    </div>
-                </a>
-            </div>
-            <div class="feed-card">
-                <a href="/detailed_post">
-                    <img class="feed-img" src="https://i.pinimg.com/474x/20/ac/c0/20acc0d0e02328c2b24f8d8b4a158346.jpg "
-                        alt="luffy gordo anime">
-                    <div class="feed-desc">
-                        <h3>Nome do projeto</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quidem cumque
-                            consequuntur. Debitis quos aspernatur eveniet commodi corporis magni facilis, at nesciunt
-                            deserunt natus
-                            minus ipsam quaerat quas sed ad!</p>
-                    </div>
-                </a>
-            </div>
-            <div class="feed-card">
-                <a href="/detailed_post">
-                    <img class="feed-img"
-                        src="https://pm1.narvii.com/7847/9426f4d271c36810369e364eaf9a04accc7cf2a2r1-471-324v2_hq.jpg"
-                        alt="itachi flameguista anime">
-                    <div class="feed-desc">
-                        <h3>Nome do projeto</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quidem cumque
-                            consequuntur. Debitis quos aspernatur eveniet commodi corporis magni facilis, at nesciunt
-                            deserunt natus
-                            minus ipsam quaerat quas sed ad!</p>
-                    </div>
-                </a>
-            </div>
-        </div>
+        <%}%>
 
 
     </main>
     <div class="footer-nav">
         <a class="footer-a" href="/feed?id=<%=id%>">
             <ion-icon class="active" name="home-outline"></ion-icon>
-        </a>
-        <a class="footer-a" href="/posting?id=<%=id%>">
-            <ion-icon name="add-outline"></ion-icon>
-        </a>
-        <a class="footer-a" href="/login?id=<%=id%>">
-            <ion-icon name="person-outline"></ion-icon>
-        </a>
-    </div>
-    <footer>
-        <div class="footer-content">
-            <div>
-                <h5>© 2022 Hubber. All rights reserved</h6>
-            </div>
-            <div class="footer-icons">
-                <ion-icon name="logo-twitter"></ion-icon>
-                <ion-icon name="logo-instagram"></ion-icon>
-                <ion-icon name="logo-facebook"></ion-icon>
-            </div>
+            </a>
+            <a class="footer-a" href="/posting?id=<%=id%>">
+                <ion-icon name="add-outline"></ion-icon>
+            </a>
+            <a class="footer-a" href="/login?id=<%=id%>">
+                <ion-icon name="person-outline"></ion-icon>
+            </a>
         </div>
-    </footer>
+        <footer>
+            <div class="footer-content">
+                <div>
+                    <h5>© 2022 Hubber. All rights reserved</h6>
+                </div>
+                <div class="footer-icons">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                    <ion-icon name="logo-instagram"></ion-icon>
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </div>
+            </div>
+        </footer>
 </body>
 
 
