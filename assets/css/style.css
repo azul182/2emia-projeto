@@ -234,9 +234,9 @@ a {
     flex-wrap: wrap;
 }
 
-.feed-card {
+.feed-imgs-group {
     width: 45%;
-    position: relative;
+    margin: 4px;
 }
 
 .feed-imgs-group img,
@@ -244,6 +244,10 @@ a {
     width: 100%;
     margin: 4px;
     border-radius: 8px;
+}
+
+.feed-card {
+    position: relative;
 }
 
 

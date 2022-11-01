@@ -33,33 +33,50 @@
         </div>
     </header>
     <main class="feed-main">
-        <% for (var n=0; n<posts.length; n++){%>
-        <div class="feed-card">
-            <a href="/detailed_post?id=<%=posts[n].userId%>?idPost=<%=posts[n].id%>">
-                <img class="feed-img"
-                    src="https://media.discordapp.net/attachments/1006233469078220803/1026806959556530227/unknown.png"
-                    alt="wisemysticaltree arvore dekutree">
-                <div class="feed-desc">
-                    <h3><%=posts[n].title%></h3>
-                    <p><%=posts[n].description%></p>
-                </div>
-            </a>
+        <div class="feed-imgs-group">
+            <% for (let n=0; n<chunks[0].length; n++){%>
+            <div class="feed-card">
+                <a href="/detailed_post?id=<%=chunks[0][n].userId%>?idPost=<%=chunks[0][n].id%>">
+                    <img class="feed-img"
+                        src="https://media.discordapp.net/attachments/1006233469078220803/1026806959556530227/unknown.png"
+                        alt="wisemysticaltree arvore dekutree">
+                    <div class="feed-desc">
+                        <h3><%=chunks[0][n].title%></h3>
+                        <p><%=chunks[0][n].description%></p>
+                    </div>
+                </a>
+            </div>
+            <%}%>
         </div>
-        <%}%>
+        <div class="feed-imgs-group">
+            <% for (let n=0; n<chunks[1].length; n++){%>
+            <div class="feed-card">
+                <a href="/detailed_post?id=<%=chunks[0][n].userId%>?idPost=<%=chunks[0][n].id%>">
+                    <img class="feed-img"
+                        src="https://media.discordapp.net/attachments/1006233469078220803/1026806959556530227/unknown.png"
+                        alt="wisemysticaltree arvore dekutree">
+                    <div class="feed-desc">
+                        <h3><%=chunks[1][n].title%></h3>
+                        <p><%=chunks[1][n].description%></p>
+                    </div>
+                </a>
+            </div>
+            <%}%>
+        </div>
 
 
     </main>
     <div class="footer-nav">
         <a class="footer-a" href="/feed?id=<%=id%>">
             <ion-icon class="active" name="home-outline"></ion-icon>
-            </a>
-            <a class="footer-a" href="/posting?id=<%=id%>">
-                <ion-icon name="add-outline"></ion-icon>
-            </a>
-            <a class="footer-a" href="/login?id=<%=id%>">
-                <ion-icon name="person-outline"></ion-icon>
-            </a>
-        </div>
+        </a>
+        <a class="footer-a" href="/posting?id=<%=id%>">
+            <ion-icon name="add-outline"></ion-icon>
+        </a>
+        <a class="footer-a" href="/login?id=<%=id%>">
+            <ion-icon name="person-outline"></ion-icon>
+        </a>
+    </div>
         <footer>
             <div class="footer-content">
                 <div>
